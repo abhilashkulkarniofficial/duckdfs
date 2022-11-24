@@ -1,0 +1,4 @@
+{
+    "_comment":"SELECT DISTINCT Weather_Condition FROM US_Accidents_Dataset;",
+    "project":["Weather_Condition"]
+}

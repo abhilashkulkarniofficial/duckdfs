@@ -1,0 +1,6 @@
+{
+    "_comment":"SELECT Airport_Code, AVG('Temperature(F)'), AVG('Wind_Chill(F)') FROM US_Accidents_Dataset GROUP BY Airport_Code;",
+    "project":["Temperature(F)","Wind_Chill(F)"],
+    "groupby":"Airport_Code",
+    "operator":"mean"
+}

@@ -1,0 +1,21 @@
+{
+    "_comment":"SELECT Weather_Condition, Count(ID) FROM US_Accidents_Dataset WHERE Weather_Condition == 'Snow' OR Weather_Condition == 'Light Snow' GROUP BY Weather_Condition ORDER BY ID DESC LIMIT 10;",
+    "on":[
+        {
+            "column":"Weather_Condition",
+            "where":{"et":"Snow"}
+        },
+        {
+            "column":"Weather_Condition",
+            "where":{"et":"Light Snow"}
+        }
+    ],
+    "project":["ID"],
+    "operator":"count",
+    "groupby":["Weather_Condition"],
+    "limit":10,
+    "order":{
+        "column":"ID",
+        "ascending":"false"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "_comment":"SELECT Severity, Count(ID) FROM US_Accidents_Dataset GROUP BY County ORDER BY ID DESC LIMIT 10;",
+    "project":["ID"],
+    "groupby":["Severity"],
+    "operator":"count",
+    "limit":10,
+    "order":{
+        "column":"ID",
+        "ascending":"false"
+    }
+}
