@@ -563,6 +563,7 @@ Equivalent Query:
             children_id = [directory["DuckDFSINodeSection"][y]["id"].split("___")[-1] for y in directory["DuckDFSINodeDirectorySection"]["children"]["0"]]
             for i, x in enumerate(parsed_path):
                 current_id = None
+                mapreduce_params = None
                 for z in directory["DuckDFSINodeSection"]:
                     if directory["DuckDFSINodeSection"][str(z)]["name"] == x:
                         current_id = directory["DuckDFSINodeSection"][str(z)]["id"] 
@@ -598,7 +599,7 @@ Equivalent Query:
                             print(list(df.columns))
                             return
 
-                        mapreduce_params = None
+                        
                         try:
                             f = open(query)
                             mapreduce_params = json.loads(f.read())
