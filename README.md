@@ -21,3 +21,10 @@ where duckdfs
 ```
 duckdfs --help
 ```
+
+## Shutdown DuckDFS
+
+```
+source ./shutdown.sh
+```
+
