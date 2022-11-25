@@ -8,6 +8,7 @@ import requests
 import pandas as pd
 import socket
 import warnings
+import io
 
 
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -595,8 +596,11 @@ Equivalent Query:
                         df = pd.read_csv('files/'+block_id+'/'+file_name)
 
                         if int(describe) == 1:
+                            buf = io.StringIO()
+                            df.info(buf=buf)
+                            s = buf.getvalue()
                             print("The dataset has the following columns:")
-                            print(list(df.info()))
+                            print(s)
                             return
 
                         
