@@ -596,7 +596,7 @@ Equivalent Query:
 
                         if int(describe) == 1:
                             print("The dataset has the following columns:")
-                            print(list(df.columns))
+                            print(list(df.info()))
                             return
 
                         
