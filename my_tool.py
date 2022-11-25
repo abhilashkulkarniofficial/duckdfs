@@ -578,14 +578,6 @@ Equivalent Query:
                     if len(parsed_path) == 1 and parsed_path[0] in children_names:
                         file_id = children_id[children_names.index(parsed_path[0])]
                     blocks = directory["DuckDFSINodeSection"][file_id]["blocks"]
-                    mapreduce_params = None
-                    try:
-                        f = open(query)
-                        mapreduce_params = json.loads(f.read())
-                        f.close()
-                    except:
-                        click.echo("Invalid query in file or the query file does not exist.")
-                        return
                     
                     resframes = []
 
@@ -604,6 +596,15 @@ Equivalent Query:
                         if int(describe) == 1:
                             print("The dataset has the following columns:")
                             print(list(df.columns))
+                            return
+
+                        mapreduce_params = None
+                        try:
+                            f = open(query)
+                            mapreduce_params = json.loads(f.read())
+                            f.close()
+                        except:
+                            click.echo("Invalid query in file or the query file does not exist.")
                             return
 
                         mapreduce_keys = mapreduce_params.keys()
